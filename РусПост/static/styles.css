@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.container {
+    padding: 20px;
+}
+
+
+.post {
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.delete-btn {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+.post-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.post-input textarea {
+    border: 2px solid #32CD32;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    transition: border-color 0.3s;
+}
+
+.post-input textarea:focus {
+    border-color: #007bff; /* Цвет при фокусе */
+}
+
+.post-input button {
+    margin-top: 10px;
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.post-input button:hover {
+    background-color: #28a745; /* Цвет кнопки при наведении */
+}

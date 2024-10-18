@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Подписки:</h2>
+    {% if user.subscriptions %}
+        <ul>
+            {% for subscription in user.subscriptions %}
+                <li>{{ subscription.username }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Вы никого не подписаны.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Назад на главную</a>
+{% endblock %}

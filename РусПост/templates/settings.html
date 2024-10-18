@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Настройки аккаунта</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" name="username" id="username" value="{{ user.username }}" required>
+
+        <label for="description">Описание:</label>
+        <textarea name="description" id="description" rows="4">{{ user.description }}</textarea>
+
+        <label for="avatar">Аватар:</label>
+        <input type="file" name="avatar" id="avatar" accept="image/*">
+
+        <button type="submit">Сохранить изменения</button>
+    </form>
+    <a href="{{ url_for('home') }}">Назад на главную</a>
+{% endblock %}

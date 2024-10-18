@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #00b300;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Регистрация</h2>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p>Уже есть аккаунт? <a href="{{ url_for('login') }}">Войдите</a></p>
+    </div>
+</body>
+</html>

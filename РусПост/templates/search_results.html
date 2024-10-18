@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Результаты поиска для "{{ request.path.split('/')[-1] }}"</h2>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <p>{{ post.content }}</p>
+                {% if post.media_file %}
+                    <img src="{{ url_for('uploaded_file', filename=post.media_file) }}" alt="Медиа" style="max-width: 100%;">
+                {% endif %}
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Посты не найдены.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Назад на главную</a>
+{% endblock %}

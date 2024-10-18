@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="profile-header">
+        {% if user.avatar %}
+            <img src="{{ url_for('uploaded_file', filename=user.avatar) }}" alt="Avatar">
+        {% else %}
+            <img src="default_avatar.png" alt="Avatar">  <!-- Путь к изображению по умолчанию -->
+        {% endif %}
+        <div>
+            <h2>{{ user.username }}</h2>
+            <p><strong>Описание:</strong> {{ user.description }}</p>
+        </div>
+    </div>
+
+    <h3>Посты пользователя:</h3>
+    <div class="profile-posts">
+        {% for post in user.posts %}
+            <div class="post">
+                <p>{{ post.content }}</p>
+                {% if post.media_file %}
+                    <img src="{{ url_for('uploaded_file', filename=post.media_file) }}" alt="Медиа" style="max-width: 100%;">
+                {% endif %}
+                <hr>
+            </div>
+        {% else %}
+            <p>Нет постов для отображения.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('home') }}">Назад на главную</a>
+{% endblock %}

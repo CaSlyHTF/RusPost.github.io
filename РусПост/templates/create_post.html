@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Написать пост</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <textarea name="content" placeholder="Ваш пост" required></textarea>
+        <input type="file" name="media" accept="image/*,video/*">
+        <button type="submit">Опубликовать</button>
+    </form>
+    <a href="{{ url_for('home') }}">Назад на главную</a>
+{% endblock %}
